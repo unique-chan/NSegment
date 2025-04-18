@@ -25,7 +25,7 @@
 ### Overview:
 - With our strategy, you can boost remote sensing image segmentation.
 <p align="center">
-    <img alt="Welcome" src="sample.png" />
+    <img alt="Welcome" src="overview.png" />
 </p>
 
 ### Preliminaries:
