@@ -38,7 +38,10 @@ from mmseg.registry import TRANSFORMS
 
 @TRANSFORMS.register_module()
 class NoisySegment:
-    def __init__(self, alpha_sigma_list, prob=0.5):
+    def __init__(self, alpha_sigma_list=None, prob=0.5):
+        if not alpha_sigma_list:
+            alpha_sigma_list = [(alpha, sigma) for alpha in [1, 15, 30, 50, 100] 
+                                 for sigma in [3, 5, 10]]
         self.alpha_sigma_list = alpha_sigma_list
         self.prob = prob
 
