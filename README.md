@@ -80,13 +80,13 @@ train_pipeline = [
 ### Preliminaries:
 * **Step 1**. Create a conda environment with Python 3.8 and activate it.
     ~~~shell
-    conda create --name nsegment python=3.8 -y
+    conda create --n nsegment python=3.8 -y
     conda activate nsegment
     ~~~
 
 * **Step 2.** Install PyTorch with TorchVision following [official instructions](https://pytorch.org/get-started/locally/). The below is an example. 
     ~~~shell
-    conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+    pip install torch==2.1.2 torchvision==0.16.2 
     ~~~
 
 * **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version suited to MMRotate of 2024).
@@ -94,7 +94,7 @@ train_pipeline = [
     # ⚠️ No need to clone MMSeg (e.g. "git clone https://github.com/open-mmlab/mmsegmentation; rm -rf mmsegmentation/.git"). Already cloned! 
     pip install -U openmim
     mim install mmengine
-    mim install "mmcv==2.2.0"
+    mim install mmcv==2.0.0
     pip install -v -e mmsegmentation/
     ~~~
 
