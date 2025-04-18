@@ -64,7 +64,6 @@ class NoisySegment:
         map_y = np.clip(y + dy, 0, shape[0] - 1).astype(np.float32)
         noisy_segment = cv2.remap(segment, map_x, map_y, interpolation=cv2.INTER_NEAREST)
         return noisy_segment
-
 ~~~
 
 ### Preliminaries:
