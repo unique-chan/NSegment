@@ -21,7 +21,7 @@ for i, (data, x_pos) in enumerate(zip(box_data, positions)):
     mean_val = np.mean(data)
     std_val = np.std(data)
     y_text = mean_val + std_val + 0.02  
-    ax.text(x_pos + 0.05, y_text,
+    ax.text(x_pos + 0.2, y_text,
             f"Mean: {mean_val:.2f}\nStd: {std_val:.2f}",
             fontsize=12, weight='bold')
 
