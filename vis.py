@@ -24,7 +24,8 @@ for i, (data, x_pos) in enumerate(zip(box_data, positions)):
     # y_text = mean_val + std_val + 0.02  
     ax.text(x_pos + 0.2, max_val,
             f"Max: {max_val:.2f}\nMean: {mean_val:.2f}\nStd: {std_val:.1f}",
-            fontsize=12, weight='bold')
+            fontsize=12, weight='bold', 
+            bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.3', edgecolor='none'))
 
 ax.set_xlabel("Dataset Size", fontsize=12)
 ax.set_ylabel("mIoU Performance Gain", fontsize=12)
