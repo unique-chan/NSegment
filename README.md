@@ -28,7 +28,7 @@
     <img alt="Welcome" src="overview.png" />
 </p>
 
-### Our algorithm in Python (with MMSegmentation)
+### Our algorithm in Python3 (with OpenCV, Numpy, and MMSegmentation)
 ~~~python3
 import cv2
 import numpy as np
