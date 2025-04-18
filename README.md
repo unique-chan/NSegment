@@ -53,7 +53,7 @@ class NoisySegment:
     def transform(self, segment, random_state=None):
         if random_state is None:
             random_state = np.random.RandomState(None)
-        alpha, sigma = self.alpha_sigma_list[random_state.randint(0, len(alpha_sigma_list))]
+        alpha, sigma = self.alpha_sigma_list[random_state.randint(0, len(self.alpha_sigma_list))]
         shape = segment.shape[:2]
         dx = alpha * (2 * random_state.rand(*shape) - 1)
         dy = alpha * (2 * random_state.rand(*shape) - 1)
@@ -66,8 +66,7 @@ class NoisySegment:
         return noisy_segment
 ~~~
 
-### Preliminaries:
-- Install all necessary packages listed in the `requirements.txt`. 
+### How to use:
 - Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
 ~~~python3
 train_pipeline = [
@@ -78,8 +77,26 @@ train_pipeline = [
 ]
 ~~~
 
-### Training via our strategy:
-- ...
+### Preliminaries:
+* **Step 1**. Create a conda environment with Python 3.8 and activate it.
+    ~~~shell
+    conda create --name nsegment python=3.8 -y
+    conda activate nsegment
+    ~~~
+
+* **Step 2.** Install PyTorch with TorchVision following [official instructions](https://pytorch.org/get-started/locally/). The below is an example. 
+    ~~~shell
+    conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+    ~~~
+
+* **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version suited to MMRotate of 2024).
+    ~~~shell
+    # ⚠️ No need to clone MMSeg (e.g. "git clone https://github.com/open-mmlab/mmsegmentation; rm -rf mmsegmentation/.git"). Already cloned! 
+    pip install -U openmim
+    mim install mmengine
+    mim install "mmcv==2.2.0"
+    pip install -v -e mmsegmentation/
+    ~~~
 
 ### Citation:
 If you use this code for your research, please cite the following paper:
