@@ -81,7 +81,7 @@ class NoisySegment:
   ~~~
 - For better training, you might adjust various $(\alpha, \sigma)$ parameter pairs via `alpha_sigma_list` as follows:
   ~~~python3
-  dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5)]),
+  dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...])
   ~~~
 
 ### Preliminaries:
