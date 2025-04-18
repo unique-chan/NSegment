@@ -34,7 +34,7 @@ for i, (data, x_pos) in enumerate(zip(box_data, positions)):
             bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.3', edgecolor='none'))
 
 ax.set_xlabel("Dataset Size", fontsize=12)
-ax.set_ylabel("mIoU Performance Gain", fontsize=12)
+ax.set_ylabel("Performance Gain (mIoU)", fontsize=12)
 ax.set_xticks(dataset_sizes_gb)
 ax.set_xticklabels([f"{label}\n({size} GB)" for label, size in zip(dataset_labels, dataset_sizes_gb)])
 
