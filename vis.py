@@ -8,7 +8,7 @@ delta_loveda = np.array([43.55 - 43.11, 43.36 - 43.29, 43.82 - 43.35, 46.49 - 46
 dataset_sizes_gb = [0.47, 2.22, 8.93]
 dataset_labels = ['Vaihingen', 'Potsdam', 'LoveDA']
 box_data = [delta_vaihingen, delta_potsdam, delta_loveda]
-colors = ['orange', 'skyblue', 'lightgreen']
+colors = ['pink', 'skyblue', 'lightgreen']
 
 fig, ax = plt.subplots(figsize=(9, 4.5))
 positions = dataset_sizes_gb
