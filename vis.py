@@ -20,10 +20,16 @@ for patch, color in zip(box['boxes'], colors):
 for i, (data, x_pos) in enumerate(zip(box_data, positions)):
     max_val = np.max(data)
     mean_val = np.mean(data)
-    std_val = np.std(data)
+    min_val = np.min(data)
+    # std_val = np.std(data)
     # y_text = mean_val + std_val + 0.02  
+
+    max_mag = '+' if max_val > 0 else ''
+    min_mag = '+' if min_val > 0 else ''
+    mean_mag = '+' if mean_val > 0 else ''
+
     ax.text(x_pos + 0.2, max_val,
-            f"Max: {max_val:.2f}\nMean: {mean_val:.2f}\nStd: {std_val:.1f}",
+            f"Max: {max_mag}{max_val:.2f}\nMean: {mean_mag}{mean_val:.2f}\nMin: {min_mag}{min_val:.1f}",
             fontsize=12, weight='bold', 
             bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.3', edgecolor='none'))
 
