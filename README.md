@@ -28,14 +28,53 @@
     <img alt="Welcome" src="overview.png" />
 </p>
 
+### Our algorithm in Python (with MMSegmentation)
+~~~python3
+import cv2
+import numpy as np
+
+from mmseg.registry import TRANSFORMS
+
+
+@TRANSFORMS.register_module()
+class NoisySegment:
+    def __init__(self, alpha_sigma_list, prob=0.5):
+        self.alpha_sigma_list = alpha_sigma_list
+        self.prob = prob
+
+    def __call__(self, results):
+        if np.random.rand() > self.prob:
+            return results
+        segment = results['gt_seg_map']
+        noisy_segment = self.transform(segment)
+        results['gt_seg_map'] = noisy_segment
+        return results
+
+    def transform(self, segment, random_state=None):
+        if random_state is None:
+            random_state = np.random.RandomState(None)
+        alpha, sigma = self.alpha_sigma_list[random_state.randint(0, len(alpha_sigma_list))]
+        shape = segment.shape[:2]
+        dx = alpha * (2 * random_state.rand(*shape) - 1)
+        dy = alpha * (2 * random_state.rand(*shape) - 1)
+        dx = cv2.GaussianBlur(dx, (0, 0), sigma)
+        dy = cv2.GaussianBlur(dy, (0, 0), sigma)
+        x, y = np.meshgrid(np.arange(shape[1]), np.arange(shape[0]))
+        map_x = np.clip(x + dx, 0, shape[1] - 1).astype(np.float32)
+        map_y = np.clip(y + dy, 0, shape[0] - 1).astype(np.float32)
+        noisy_segment = cv2.remap(segment, map_x, map_y, interpolation=cv2.INTER_NEAREST)
+        return noisy_segment
+
+~~~
+
 ### Preliminaries:
 - Install all necessary packages listed in the `requirements.txt`. 
-- Simply add our `NSegment` to *train_pipeline* in your model configuration file. Below is an example:
+- Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
 ~~~python3
 train_pipeline = [
     dict(type='LoadImageFromFile'),
     dict(type='LoadAnnotations', with_bbox=True),
-    dict(type='NSegment'), # Our transformation (⭐) should be placed directly after 'LoadAnnotations'
+    dict(type='NoisySegment'), # Our transformation (⭐) should be placed directly after 'LoadAnnotations'
     ...
 ]
 ~~~
