@@ -29,7 +29,7 @@ for i, (data, x_pos) in enumerate(zip(box_data, positions)):
     mean_mag = '+' if mean_val > 0 else ''
 
     ax.text(x_pos + 0.2, max_val,
-            f"Max: {max_mag}{max_val:.2f}\nMean: {mean_mag}{mean_val:.2f}\nMin: {min_mag}{min_val:.1f}",
+            f"Max: {max_mag}{max_val:.2f}\nMean: {mean_mag}{mean_val:.2f}\nMin: {min_mag}{min_val:.2f}",
             fontsize=12, weight='bold', 
             bbox=dict(facecolor='white', alpha=0.8, boxstyle='round,pad=0.3', edgecolor='none'))
 
