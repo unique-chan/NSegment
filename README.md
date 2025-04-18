@@ -71,14 +71,18 @@ class NoisySegment:
 
 ### How to use:
 - Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
-~~~python3
-train_pipeline = [
-    dict(type='LoadImageFromFile'),
-    dict(type='LoadAnnotations'),
-    dict(type='NoisySegment'), # ⭐
-    ...
-]
-~~~
+  ~~~python3
+  train_pipeline = [
+      dict(type='LoadImageFromFile'),
+      dict(type='LoadAnnotations'),
+      dict(type='NoisySegment'), # ⭐
+      ...
+  ]
+  ~~~
+- For better training, you might adjust various $(\alpha, \sigma)$ parameter pairs via `alpha_sigma_list` as follows:
+  ~~~python3
+  dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5)]),
+  ~~~
 
 ### Preliminaries:
 * **Step 1**. Create a conda environment with Python 3.8 and activate it.
