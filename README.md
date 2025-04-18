@@ -71,8 +71,8 @@ class NoisySegment:
 ~~~python3
 train_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='LoadAnnotations', with_bbox=True),
-    dict(type='NoisySegment'), # Our transformation (⭐) should be placed directly after 'LoadAnnotations'
+    dict(type='LoadAnnotations'),
+    dict(type='NoisySegment'), # ⭐
     ...
 ]
 ~~~
