@@ -8,17 +8,25 @@ delta_loveda = np.array([43.55 - 43.11, 43.36 - 43.29, 43.82 - 43.35, 46.49 - 46
 dataset_sizes_gb = [0.47, 2.22, 8.93]
 dataset_labels = ['Vaihingen', 'Potsdam', 'LoveDA']
 box_data = [delta_vaihingen, delta_potsdam, delta_loveda]
+colors = ['orange', 'skyblue', 'lightgreen']
 
-fig, ax = plt.subplots(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(9, 4.5))
 positions = dataset_sizes_gb
 box = ax.boxplot(box_data, positions=positions, widths=0.5, patch_artist=True)
 
-colors = ['orange', 'skyblue', 'lightgreen']
 for patch, color in zip(box['boxes'], colors):
     patch.set_facecolor(color)
 
-ax.set_xlabel("Dataset Size")
-ax.set_ylabel("Performance Gain (mean mIoU)")
+for i, (data, x_pos) in enumerate(zip(box_data, positions)):
+    mean_val = np.mean(data)
+    std_val = np.std(data)
+    y_text = mean_val + std_val + 0.02  
+    ax.text(x_pos + 0.05, y_text,
+            f"Mean: {mean_val:.2f}\nStd: {std_val:.2f}",
+            fontsize=12, weight='bold')
+
+ax.set_xlabel("Dataset Size", fontsize=12)
+ax.set_ylabel("Performance Gain (mean mIoU)", fontsize=12)
 ax.set_xticks(dataset_sizes_gb)
 ax.set_xticklabels([f"{label}\n({size} GB)" for label, size in zip(dataset_labels, dataset_sizes_gb)])
 
