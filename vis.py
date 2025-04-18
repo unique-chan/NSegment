@@ -27,7 +27,7 @@ for i, (data, x_pos) in enumerate(zip(box_data, positions)):
             fontsize=12, weight='bold')
 
 ax.set_xlabel("Dataset Size", fontsize=12)
-ax.set_ylabel("Performance Gain (mean mIoU)", fontsize=12)
+ax.set_ylabel("mIoU Performance Gain", fontsize=12)
 ax.set_xticks(dataset_sizes_gb)
 ax.set_xticklabels([f"{label}\n({size} GB)" for label, size in zip(dataset_labels, dataset_sizes_gb)])
 
