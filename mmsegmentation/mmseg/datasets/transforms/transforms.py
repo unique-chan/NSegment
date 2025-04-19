@@ -2535,3 +2535,36 @@ class RandomDepthMix(BaseTransform):
 
         results['img'] = img
         return results
+
+
+@TRANSFORMS.register_module()
+class NoisySegment:
+    def __init__(self, alpha_sigma_list=None, prob=0.5):
+        if not alpha_sigma_list:
+            alpha_sigma_list = [(alpha, sigma) for alpha in [1, 15, 30, 50, 100]
+                                 for sigma in [3, 5, 10]]
+        self.alpha_sigma_list = alpha_sigma_list
+        self.prob = prob
+
+    def __call__(self, results):
+        if np.random.rand() > self.prob:
+            return results
+        segment = results['gt_seg_map']
+        noisy_segment = self.transform(segment)
+        results['gt_seg_map'] = noisy_segment
+        return results
+
+    def transform(self, segment, random_state=None):
+        if random_state is None:
+            random_state = np.random.RandomState(None)
+        alpha, sigma = self.alpha_sigma_list[random_state.randint(0, len(self.alpha_sigma_list))]
+        shape = segment.shape[:2]
+        dx = alpha * (2 * random_state.rand(*shape) - 1)
+        dy = alpha * (2 * random_state.rand(*shape) - 1)
+        dx = cv2.GaussianBlur(dx, (0, 0), sigma)
+        dy = cv2.GaussianBlur(dy, (0, 0), sigma)
+        x, y = np.meshgrid(np.arange(shape[1]), np.arange(shape[0]))
+        map_x = np.clip(x + dx, 0, shape[1] - 1).astype(np.float32)
+        map_y = np.clip(y + dy, 0, shape[0] - 1).astype(np.float32)
+        noisy_segment = cv2.remap(segment, map_x, map_y, interpolation=cv2.INTER_NEAREST)
+        return noisy_segment
