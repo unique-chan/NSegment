@@ -70,7 +70,7 @@ class NoisySegment:
 ~~~
 
 ### How to use:
-- If you use our git repository, our augmentation method is already included (in **mmsegmentation/mmseg/datasets/transforms/transforms.py**). 
+- If you use our git repository, our augmentation method is already included (in **[mmsegmentation/mmseg/datasets/transforms/transforms.py](mmsegmentation/mmseg/datasets/transforms/transforms.py)**). 
 - Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
   ~~~python3
   train_pipeline = [
