@@ -97,7 +97,7 @@ class NoisySegment:
     conda install pytorch==2.1.2 torchvision==0.16.2 pytorch-cuda=12.1 -c pytorch -c nvidia
     ~~~
 
-* **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version suited to MMRotate of 2024).
+* **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version of 2024).
     ~~~shell
     # ⚠️ No need to clone MMSeg (e.g. "git clone https://github.com/open-mmlab/mmsegmentation; rm -rf mmsegmentation/.git"). Already cloned! 
     pip install -U openmim==0.3.9
