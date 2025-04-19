@@ -100,7 +100,7 @@ class NoisySegment:
 * **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version suited to MMRotate of 2024).
     ~~~shell
     # ⚠️ No need to clone MMSeg (e.g. "git clone https://github.com/open-mmlab/mmsegmentation; rm -rf mmsegmentation/.git"). Already cloned! 
-    pip install -U openmim
+    pip install -U openmim==0.3.9
     mim install mmengine==0.10.7
     mim install mmcv==2.1.0
     pip install -v -e mmsegmentation/
