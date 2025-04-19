@@ -84,7 +84,7 @@ class NoisySegment:
   ~~~python3
   dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...])
   ~~~
-* For example, if you want our method be applied with a prob of 80%?
+* For example, if you want our method be applied with a prob of 80%? (Note: default prob = 0.5)
   ~~~python3
   dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...], prob=0.8)
   ~~~
