@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#"><img alt="Python3.7+" src="https://img.shields.io/badge/Python-3.7+-blue?logo=python&logoColor=white"></a>
-  <a href="#"><img alt="PyTorch1.6+" src="https://img.shields.io/badge/PyTorch-1.6+-orange?logo=pytorch&logoColor=white"></a>
+  <a href="#"><img alt="PyTorch1.6+(≥2.0 recommended)" src="https://img.shields.io/badge/PyTorch-1.6+ (≥2.0 recommended)-orange?logo=pytorch&logoColor=white"></a>
   <a href="#"><img alt="MMSegmentation1.2.2" src="https://img.shields.io/badge/MMSegmentation-1.2.2-red?logo=mmlab&logoColor=white"></a>
   <a href="#"><img alt="MIT" src="https://img.shields.io/badge/License-MIT-green?logo=MIT"></a>
 </p>
