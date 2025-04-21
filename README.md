@@ -17,7 +17,7 @@
 </p>
 
 ### This repo includes:
-- Official implementation of our proposed approach
+- Official implementation of our proposed approach (**_NSegment_**)
 
 ### Announcement:
 - Apr. 2025: We have released the official code of our proposed approach!
