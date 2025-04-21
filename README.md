@@ -70,7 +70,7 @@ class NoisySegment:
 ~~~
 
 ### How to use:
-* If you use our git repository, our augmentation method is already included (in **[mmsegmentation/mmseg/datasets/transforms/transforms.py](mmsegmentation/mmseg/datasets/transforms/transforms.py)**) and registered (in **[mmsegmentation/mmseg/datasets/transforms/__init__.py](mmsegmentation/mmseg/datasets/transforms/__init__.py)**). 
+* If you use our git repository, our augmentation method is already included (in **[mmsegmentation/mmseg/datasets/transforms/transforms.py](mmsegmentation/mmseg/datasets/transforms/transforms.py)**). Also, in **[mmsegmentation/tools/train.py](mmsegmentation/tools/train.py)**, our transform is already imported and registered.
 * Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
   ~~~python3
   train_pipeline = [
@@ -84,7 +84,7 @@ class NoisySegment:
   ~~~python3
   dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...])
   ~~~
-* For example, if you want our method be applied with a prob of 80%? (Note: default prob = 0.5)
+* If you want our method be applied with a prob of 80%? (Note: default prob = 0.5)
   ~~~python3
   dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...], prob=0.8)
   ~~~
