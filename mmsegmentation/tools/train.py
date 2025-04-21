@@ -9,7 +9,7 @@ from mmengine.logging import print_log
 from mmengine.runner import Runner
 
 from mmseg.registry import RUNNERS
-from mmseg.datasets.transforms.transforms import *
+# from mmseg.datasets.transforms.transforms import *
 
 
 def parse_args():
