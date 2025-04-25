@@ -38,7 +38,7 @@ from .transforms import (CLAHE, AdjustGamma, Albu, BioMedical3DPad,
                          PhotoMetricDistortion, RandomCrop, RandomCutOut,
                          RandomMosaic, RandomRotate, RandomRotFlip, Rerange,
                          ResizeShortestEdge, ResizeToMultiple, RGB2Gray,
-                         SegRescale)
+                         SegRescale, NoisySegment)
 from .voc import PascalVOCDataset
 
 # yapf: enable
@@ -61,5 +61,5 @@ __all__ = [
     'MapillaryDataset_v2', 'Albu', 'LEVIRCDDataset',
     'LoadMultipleRSImageFromFile', 'LoadSingleRSImageFromFile',
     'ConcatCDInput', 'BaseCDDataset', 'DSDLSegDataset', 'BDD100KDataset',
-    'NYUDataset', 'HSIDrive20Dataset'
+    'NYUDataset', 'HSIDrive20Dataset', 'NoisySegment'
 ]

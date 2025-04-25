@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#"><img alt="Python3.7+" src="https://img.shields.io/badge/Python-3.7+-blue?logo=python&logoColor=white"></a>
-  <a href="#"><img alt="PyTorch1.6+" src="https://img.shields.io/badge/PyTorch-1.6+-orange?logo=pytorch&logoColor=white"></a>
+  <a href="#"><img alt="PyTorch1.6+(≥2.0 recommended)" src="https://img.shields.io/badge/PyTorch-1.6+ (≥2.0 recommended)-orange?logo=pytorch&logoColor=white"></a>
   <a href="#"><img alt="MMSegmentation1.2.2" src="https://img.shields.io/badge/MMSegmentation-1.2.2-red?logo=mmlab&logoColor=white"></a>
   <a href="#"><img alt="MIT" src="https://img.shields.io/badge/License-MIT-green?logo=MIT"></a>
 </p>
@@ -17,7 +17,7 @@
 </p>
 
 ### This repo includes:
-- Official implementation of our proposed approach
+- Official implementation of our proposed approach (**_NSegment_**)
 
 ### Announcement:
 - Apr. 2025: We have released the official code of our proposed approach!
@@ -70,7 +70,8 @@ class NoisySegment:
 ~~~
 
 ### How to use:
-- Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
+* If you use our git repository, our augmentation method is already included and registered.
+* Simply add our `NoisySegment` to *train_pipeline* in your model configuration file. Below is an example:
   ~~~python3
   train_pipeline = [
       dict(type='LoadImageFromFile'),
@@ -79,9 +80,13 @@ class NoisySegment:
       ...
   ]
   ~~~
-- For better training, you might adjust various $(\alpha, \sigma)$ parameter pairs via `alpha_sigma_list` as follows:
+* For better training, you might adjust various $(\alpha, \sigma)$ parameter pairs via `alpha_sigma_list` as follows:
   ~~~python3
   dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...])
+  ~~~
+* If you want our method be applied with a prob of 80%? (Note: default prob = 0.5)
+  ~~~python3
+  dict(type='NoisySegment', alpha_sigma_list=[(1, 3), (1, 5) ...], prob=0.8)
   ~~~
 
 ### Preliminaries:
@@ -96,10 +101,10 @@ class NoisySegment:
     conda install pytorch==2.1.2 torchvision==0.16.2 pytorch-cuda=12.1 -c pytorch -c nvidia
     ~~~
 
-* **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version suited to MMRotate of 2024).
+* **Step 3.** Install `MMSegmentation (v1.2.2)` ([v1.2.2](https://mmsegmentation.readthedocs.io/en/latest/overview.html) is the latest version of 2024).
     ~~~shell
     # ⚠️ No need to clone MMSeg (e.g. "git clone https://github.com/open-mmlab/mmsegmentation; rm -rf mmsegmentation/.git"). Already cloned! 
-    pip install -U openmim
+    pip install -U openmim==0.3.9
     mim install mmengine==0.10.7
     mim install mmcv==2.1.0
     pip install -v -e mmsegmentation/
