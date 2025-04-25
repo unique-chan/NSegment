@@ -10,7 +10,7 @@ dataset_labels = ['Vaihingen', 'Potsdam', 'LoveDA']
 box_data = [delta_vaihingen, delta_potsdam, delta_loveda]
 colors = ['pink', 'skyblue', 'lightgreen']
 
-fig, ax = plt.subplots(figsize=(9, 4.5))
+fig, ax = plt.subplots(figsize=(9, 3.5))
 positions = dataset_sizes_gb
 box = ax.boxplot(box_data, positions=positions, widths=0.5, patch_artist=True)
 
