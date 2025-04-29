@@ -20,6 +20,7 @@
 - Official implementation of our proposed approach (**_NSegment_**)
 
 ### Announcement:
+- Apr. 2025: Our preprint is now available at https://arxiv.org/abs/2504.19634.
 - Apr. 2025: We have released the official code of our proposed approach!
 
 ### Overview:
