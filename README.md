@@ -129,5 +129,24 @@ If you use this code for your research, please cite the following paper:
   Yechan Kim, DongHo Yoon, SooYeon Kim, and Moongu Jeon. "NSegment: Noisy Segment Improves Remote Sensing Image Segmentation." Arxiv Preprint (2025).
   ~~~
 
+We highly recommend referring to our prior study as follows:
+- GitHub: https://github.com/unique-chan/NBBOX
+- For Latex:
+  ~~~ME
+  @article{kim2025nbbox,
+    title={NBBOX: Noisy Bounding Box Improves Remote Sensing Object Detection},
+    author={Kim, Yechan and Kim, SooYeon and Jeon, Moongu},
+    journal={IEEE Geoscience and Remote Sensing Letters},
+    volume={22},
+    year={2025},
+    publisher={IEEE}
+  }
+  ~~~
+
+- For Word (MLA Style):
+  ~~~ME
+  Yechan Kim, SooYeon Kim, and Moongu Jeon. "NBBOX: Noisy Bounding Box Improves Remote Sensing Object Detection." IEEE Geoscience and Remote Sensing Letters 22 (2025).
+  ~~~
+
 ### Contribution:
 If you find any bugs or have opinions for further improvements, please feel free to create a pull request or contact me (yechankim@gm.gist.ac.kr). All contributions are welcome.
