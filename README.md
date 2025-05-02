@@ -129,7 +129,7 @@ If you use this code for your research, please cite the following paper:
   Yechan Kim, DongHo Yoon, SooYeon Kim, and Moongu Jeon. "NSegment: Noisy Segment Improves Remote Sensing Image Segmentation." Arxiv Preprint (2025).
   ~~~
 
-We highly recommend referring to our prior study as follows:
+We also highly recommend referring to our prior study as follows:
 - GitHub: https://github.com/unique-chan/NBBOX
 - For Latex:
   ~~~ME
