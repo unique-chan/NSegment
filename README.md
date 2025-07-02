@@ -1,5 +1,5 @@
 <h1 align="center">
-  N<sup>Segment</sup>: Noisy Segment Improves Remote Sensing Image Segmentation
+  N<sup>Segment</sup>: Label-specific Deformations for Remote Sensing Image Segmentation
 </h1>
 
 <p align="center">
