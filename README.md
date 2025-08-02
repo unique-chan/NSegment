@@ -119,24 +119,8 @@ If you use this code for your research, please cite the following paper:
 - For Latex:
   ~~~ME
   @article{kim2025nsegment,
-    title={NSegment: Noisy Segment Improves Remote Sensing Image Segmentation},
+    title={NSegment: Label-specific Deformations for Remote Sensing Image Segmentation},
     author={Kim, Yechan and Yoon, DongHo and Kim, SooYeon and Jeon, Moongu},
-    journal={Arxiv Preprint},
-  }
-  ~~~
-
-- For Word (MLA Style):
-  ~~~ME
-  Yechan Kim, DongHo Yoon, SooYeon Kim, and Moongu Jeon. "NSegment: Noisy Segment Improves Remote Sensing Image Segmentation." Arxiv Preprint (2025).
-  ~~~
-
-We also highly recommend referring to our prior study as follows:
-- GitHub: https://github.com/unique-chan/NBBOX
-- For Latex:
-  ~~~ME
-  @article{kim2025nbbox,
-    title={NBBOX: Noisy Bounding Box Improves Remote Sensing Object Detection},
-    author={Kim, Yechan and Kim, SooYeon and Jeon, Moongu},
     journal={IEEE Geoscience and Remote Sensing Letters},
     volume={22},
     year={2025},
@@ -144,6 +128,13 @@ We also highly recommend referring to our prior study as follows:
   }
   ~~~
 
+- For Word (MLA Style):
+  ~~~ME
+  Yechan Kim, DongHo Yoon, SooYeon Kim, and Moongu Jeon. "NSegment: Label-specific Deformations for Remote Sensing Image Segmentation." IEEE Geoscience and Remote Sensing Letters 22 (2025).
+  ~~~
+
+We also highly recommend referring to our prior study as follows:
+- GitHub: https://github.com/unique-chan/NBBOX
 - For Word (MLA Style):
   ~~~ME
   Yechan Kim, SooYeon Kim, and Moongu Jeon. "NBBOX: Noisy Bounding Box Improves Remote Sensing Object Detection." IEEE Geoscience and Remote Sensing Letters 22 (2025).
